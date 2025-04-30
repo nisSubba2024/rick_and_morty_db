@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Code:wght@300..700&family=Meow+Script&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+    --font-family: 'Comic Neue', cursive;
+    --primary-bg-color: hsl(0, 0%, 10%);
+    --secondary-bg-color: hsl(0, 0%, 15%);
+    --primary-box-shadow: 1px 1px 5px 1px hsl(0, 0%, 0.2%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: var(--font-family), sans-serif;
+    background-color: var(--primary-bg-color);
+}
+
+.body-wrapper {
+    padding: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70rem, 1fr));
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid black;
+    font-size: 1.5rem;
+    background-color: var(--secondary-bg-color);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 65rem;
+    height: 25rem;
+    box-shadow: var(--primary-box-shadow);
+}
+
+.card.dead {
+    background-color: lightcoral;
+}
+
+.card.unknown {
+    background-color: lightslategray;
+}
+
+.avatar {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    height: 100%;
+}
+
+.avatar img {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    width: 25rem;
+    height: 100%;
+}
+
+.details {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #fffffe;
+}
+
+.name {
+    font-size: 3rem;
+}
+
+.gender-field, .location-label, .origin-field,.episode-label {
+    color: hsl(0, 0%, 50%);
+}
+
+.gender, .location-name, .origin {
+    color: #fffffe;
+}
+
+.card.dead .gender-field, .card.dead .location-label, .card.dead .origin-field,.card.dead .episode-label{
+    color: black;
+}
+
+.card.unknown .gender-field, .card.unknown .location-label, .card.unknown .origin-field,.card.unknown .episode-label{
+    color: black;
+}
+
+@media (max-width: 800px) {
+    .card {
+        flex-direction: column;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .page-title {
+    }
+
+    .avatar img {
+        width: 100%;
+        object-fit: cover;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+    }
+
+    .details {
+        padding: 0 2rem 2rem 2rem;
+    }
+}

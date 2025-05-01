@@ -15,7 +15,7 @@ const apiRequest = async (url) => {
 
 const fetchData = async () => {
     let apiUrl = `https://rickandmortyapi.com/api/character`;
-
+    let counter = 0;
     while (apiUrl) {
         const data = await apiRequest(apiUrl);
         for (const character of data.results) {
@@ -161,6 +161,7 @@ const fetchData = async () => {
             characterDb.push(characterData);
         }
         apiUrl = data.info.next;
+        // counter++;
     }
 }
 

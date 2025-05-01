@@ -125,11 +125,31 @@ body {
     color: black;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
+    body {
+        height: auto;
+    }
+    .body-wrapper {
+        width: 100%;
+        padding: 4rem 0;
+    }
+
+    .grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+
+    }
     .card {
         flex-direction: column;
         height: fit-content;
-        width: fit-content;
+        width: 35rem;
+    }
+    .avatar {
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
     }
 
     .page-title {
